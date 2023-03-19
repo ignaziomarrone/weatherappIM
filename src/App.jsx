@@ -25,6 +25,21 @@ function App() {
     }
   }
 
+  const Click = (event) => {
+    fetch(url)
+      .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+      .then((data) => {
+        setData(data);
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   const switchWeather = () => {
     if (data.location) {
@@ -97,7 +112,9 @@ function App() {
         onChange={event => setLocation(event.target.value)}
         onKeyPress={searchLocation}
         placeholder='Enter Location' />
-        
+        <button         
+        onClick={Click}
+        >Search</button>
       </div>
       <div className="container">
         <div className="primary">
