@@ -117,29 +117,35 @@ function App() {
         >Search</button>
       </div>
       <div className="container">
-        <div className="primary">
-          <div className="location">
-            {data.location ? <h1><b>{data.location.name}, {data.location.country}</b></h1> : <h1>Waiting for a location</h1>}
+        <div className="primary"> 
+          <div className="left">
+            <div className="location">
+              {data.location ? <h1><b>{data.location.name}, {data.location.country}</b></h1> : <h1>Waiting for a location</h1>}
+            </div>
+            <div className="clouds">
+              {data.location ? <h1>{data.current.condition.text}</h1> : null}
+            </div>             
           </div>
           <div className="temperature">
             {data.location ? <h1>{data.current.temp_c} °C</h1> : null}
           </div>
-          <div className="clouds">
-            {data.location ? <h1>{data.current.condition.text}</h1> : null}
-          </div>
+
         </div>
 
         <div className="secondary">
+          <div className="secbox">
+            <div className="wind">
+              {data.location ? <h1><b>Wind</b><br />{data.current.wind_kph} kmh, {data.current.wind_dir} </h1> : <b><h1>Wind</h1></b>  }
+            </div> 
+            <div className="humidity">
+              {data.location ? <h1><b>Humidity</b><br /> {data.current.humidity}%</h1> : <b><h1>Humidity</h1></b> }
+            </div>
+            <div className="feelslike">
+              {data.location ? <h1><b>Feels like</b><br /> {data.current.feelslike_c} °C</h1> : <b><h1>Feels like</h1></b> }
+            </div>            
+          </div>
           
-          <div className="wind">
-            {data.location ? <h1><b>Wind</b><br />{data.current.wind_kph} kmh, {data.current.wind_dir} </h1> : <h1>Wind</h1>  }
-          </div> 
-          <div className="humidity">
-            {data.location ? <h1><b>Humidity</b><br /> {data.current.humidity}%</h1> : <h1>Humidity</h1>}
-          </div>
-          <div className="feelslike">
-            {data.location ? <h1><b>Feels like</b><br /> {data.current.feelslike_c} °C</h1> : <h1>Feels like</h1>}
-          </div>
+
         </div>
       </div>
       <div className="w-full text-center absolute bottom-2">

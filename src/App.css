@@ -43,8 +43,9 @@
 }
 
 .primary {
-  display: grid;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   padding-left: 2%;
   padding-right: 2%;
   border-radius: 15px;
@@ -59,10 +60,27 @@
   transform: translate(-50%, -50%);
 }
 
+.location {
+  font-size: 2em;
+  width: 100%;
+}
+
+.clouds {
+  font-size: 2em;
+  width: 100%;
+}
+
+.temperature {
+  font-size: 5em;
+  width: 50%;
+}
+
 .secondary {
 
-  display: grid;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+
   width: 70%;
   height: 20%;
   grid-template-columns: 1fr 1fr 1fr;
@@ -77,12 +95,32 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -20%);
+
+  font-size: 2em;
+}
+
+.secbox {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10%;
+}
+
+@media screen and (max-width: 1200px) {
+  .primary {
+    font-size: 0.5em;
+  }
+
+  .secondary {
+    font-size: 1.2em;
+  }
 }
 
 .sun {
   background-image: url(./icone/sun.jpg);
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
 }
@@ -90,7 +128,8 @@
 .cloud {
   background-image: url(./icone/cloud.jpg);
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
 }
@@ -98,7 +137,8 @@
 .fog {
   background-image: url(./icone/fog.jpg);
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
 }
@@ -106,7 +146,8 @@
 .rain {
   background-image: url(./icone/rain.jpg);
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
 }
@@ -114,7 +155,8 @@
 .snow {
   background-image: url(./icone/snow.jpeg);
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
 }
